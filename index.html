@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <script defer src="/src/scripts/html2canvas.min.js"></script>
+    <script defer src="/src/scripts/script.js"></script>
+    <title>Imóvel Guide</title>
+  </head>
+
+  <body>
+    <div id="overlay"></div>
+    <header class="header">
+      <a href="/">Logo</a>
+      
+      <button class="hamburgerButton">
+        <span class="bars"></span>
+        <span class="bars"></span>
+        <span class="bars"></span>
+      </button>
+
+        <nav>
+          <ul class="menu">
+            <li><a href="/">Condominios</a></li>
+            <li><a href="/">Fórum</a></li>
+            <li><a href="/">Guia</a></li>
+            <li><a href="/">Artigos</a></li>
+            <li><a href="/">Ferramentas</a></li>
+          </ul>
+        </nav>
+  
+        <nav>
+          <ul class="menu">
+            <li><a href="/">Cotar Imóvel</a></li>
+            <li><a href="/">Planos</a></li>
+            <li><a href="/">Entrar</a></li>
+          </ul>
+        </nav>
+      <nav class="bottom">
+        <ul>
+          <li><a href="/">CADASTRE-SE</a></li>
+        </ul>
+      </nav>
+
+    </header>
+  </body>
+
+  <section class="blocks">
+    <div>
+      <p>1</p>
+      <ul class="block1" id="corretores">
+        <li class="corretores">
+          <img src="/src/img/corretora.png" />
+          <div class="corretoresInfo">
+            <span class="nomeCorretor">Nome corretora</span>
+            <span class="pontos">3.000 pontos</span>
+            <span class="telefone" id="Corretor1" onclick="tooglePhone(1)"
+              >Ver telefone</span
+            >
+          </div>
+        </li>
+        <li class="corretores">
+          <img src="/src/img/corretor.png" />
+          <div class="corretoresInfo">
+            <span class="nomeCorretor">Nome corretor</span>
+            <span class="pontos">1.800 pontos</span>
+            <span class="telefone" id="Corretor2" onclick="tooglePhone(2)"
+              >Ver telefone</span
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p>2</p>
+      <ul class="block1">
+        <li>
+          <form class="sendMessage" onsubmit="sendMessage(event)">
+            <p class="titulo">Mande uma mensagem:</p>
+            <div class="campoCPFtelefone">
+              <input type="text" placeholder="Digite seu CPF" maxlength="14" name="cpf" required onkeydown="format(event,'cpf')" />
+              <input
+                type="text"
+                placeholder="Digite seu telefone"
+                maxlength="16"
+                name="telefone"
+                required
+                onkeydown="format(event,'telefone')"
+              />
+              <textarea name="message" id="message" required></textarea>
+              <button type="submit" class="box-shadow">Enviar Mensagem</button>
+            <div>
+          </form>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p>3</p>
+      <ul class="block1">
+        <li>
+          <form onsubmit="rule3(event)" class="rule3">
+            <p class="titulo">Regra de 3</p>
+            <div class="regra3">
+              <div class="upper">
+                <input type="number" placeholder="60" id="primeiro" required />
+                <span>-</span>
+                <input type="number" placeholder="100" id="segundo" required />
+              </div>
+              <div class="under">
+                <input type="number" placeholder="30" id="terceiro" required />
+                <span>-</span>
+                <input type="number" disabled placeholder="50" id="resultado" />
+              </div>
+            </div>
+            <button type="submit" class="box-shadow">Calcular</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p>4</p>
+      <div class="sectionModalImage">
+        <img class="casa bordaImagem" src="/src/img/casa.png" />
+        <button class="botaoForaBorda" id="openModal">ABRIR IMAGEM NO MODAL</button>
+      </div>
+    </div>
+    <div>
+      <p>5</p>
+      <div class="sectionModalImage">
+        <div class="image-container" id="capture">
+          <img class="casa bordaImagem" src="/src/img/casa.png" />
+          <span class="text-over-image">Imovel Guide</span>
+        </div>
+        <button class="botaoForaBorda" id="Download">Download</button>
+      </div>
+    </div>
+    <div>
+      <p>6</p>
+      <div class="image-container2">
+        <img src="/src/img/casa-completa.png" alt="Imagem com efeito de zoom" />
+      </div>
+    </div>
+  </section>
+  <section id="modal" class="box-shadow">
+    <div class="modalHeader">
+      <span id="closeModal">X</span>
+    </div>
+    <div class="modalContent">
+      <img src="/src/img/casa-completa.png" alt="casa-visuzliação-completa">
+    </div>
+  </section>
+</html>
